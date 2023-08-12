@@ -1,0 +1,56 @@
+[
+    {
+        "id":1,
+        "title": "Pet Hospitalization",
+        "desc":"Hospitalization and medical care for your pet",
+        "image":"https://static.wixstatic.com/media/787bd7_2e99773252704887bc15b219db31eb9d~mv2.jpg/v1/fill/w_575,h_575,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Bunny%202.jpg"
+    },
+    {
+        "id":2,
+        "title": "Pet Wellness Exams",
+        "desc":"A complete check up of the pet. Proactive and Positive.",
+        "image":"https://static.wixstatic.com/media/787bd7_b098c5db569c423d82747772ca756fe5~mv2_d_1280_1280_s_2.jpg/v1/fill/w_575,h_575,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Archie.jpg"
+    },
+    {
+        "id":3,
+        "title": "Surgeries",
+        "desc":"Major and minor surgeries for small and exotic animals & birds.",
+        "image":"https://static.wixstatic.com/media/2ef2622829554d778f9c62685180049a.jpg/v1/fill/w_575,h_385,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Cat%20Close%20Up.jpg"
+    },
+    {
+        "id":4,
+        "title": "Avian Care",
+        "desc":"Birds of all kinds are treated at Petvets. Vaccination, Surgeries (Major and Minor), Sexing, Nutrition, Understanding behaviour and complete medical care done.",
+        "image":"https://static.wixstatic.com/media/f60dde14a66eff7bad1f24ce26fe29ce.jpg/v1/fill/w_575,h_382,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Lovebirds.jpg"
+    },
+    {
+        "id":5,
+        "title": "Exotic Animal Care",
+        "desc":"All kinds of treatment and surgeries done for exotic animals at Petvets.",
+        "image":"https://static.wixstatic.com/media/bbc3c70d402c478bb7a6633d9a0cde0f.png/v1/fill/w_575,h_264,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Feeding%20Guinea%20Pig.png"
+    },
+    {
+        "id":6,
+        "title": "Veterinary Diagnostic Labs",
+        "desc":"Preventative Care Get all your diagnostics done - Blood, urine, fecal, FNAC, Biopsy, etc",
+        "image":"https://static.wixstatic.com/media/2bb9e75bc3224cf4b3314fa0e01af8a7.jpg/v1/fill/w_575,h_428,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Pipetting%20Samples.jpg"
+    },
+    {
+        "id":7,
+        "title": "Vaccination",
+        "desc":"We do vaccinations for small and large animals.",
+        "image":"https://static.wixstatic.com/media/3c2eca45c90b483b9386d2b7eef92ae2.jpg/v1/fill/w_575,h_383,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Vaccination.jpg"
+    },
+    {
+        "id":8,
+        "title": "Gynecology services",
+        "desc":"Whelping Spaying Neutering Pregnancy diagnosis Reproductive disorders Hormonal assaying",
+        "image":"https://static.wixstatic.com/media/d6a9906c94be4282a487b3e92993a22f.png/v1/fill/w_575,h_383,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Three%20French%20Bullgod%20Puppies.png"
+    },
+    {
+        "id":9,
+        "title": "Large Animal Care",
+        "desc":"Our veterinarians also specialise in large animal care for Goats, Cows, Bulls, Buffaloes and cattle",
+        "image":"https://static.wixstatic.com/media/3f369841feb24b89be94fe558879bf96.jpg/v1/fill/w_575,h_384,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Cattle%20at%20Sunrise.jpg"
+    }
+]

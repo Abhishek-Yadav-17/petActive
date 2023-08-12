@@ -1,0 +1,22 @@
+.elements{
+  padding: 5rem;
+  margin: 2rem;
+  text-align: left;
+}
+
+.elements img{
+  width: 30rem;
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
+.elements .desc{
+  display: flex;
+  flex-direction: column;
+}
+
+.elements .row{
+  display: flex;
+  align-items: center;
+  margin: 5rem 0;
+}

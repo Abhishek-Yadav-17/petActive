@@ -1,0 +1,23 @@
+#footer{
+    text-align: center;
+    background-color: #323232;
+  }
+  
+  .footer-link{
+    padding: 2rem 1rem;
+    color: #11999E;
+  }
+  
+  .footer-link:hover{
+    color: #30E3CA;
+  }
+  
+  .copyright-line{
+    font-family: 'montserrat', sans-serif;
+    color: #fff;
+    padding: 2rem 0 0;
+  }
+
+  .footer-elem{
+    padding: 2rem;
+  }

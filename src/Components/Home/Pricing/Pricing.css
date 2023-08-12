@@ -1,0 +1,36 @@
+.pricing{
+  background-color: #C38154;
+}
+
+#pricing {
+  padding: 7% 10%;
+}
+
+.card-header {
+  background-color: #11999e;
+}
+
+.card-header img{
+  height: 15rem;
+}
+
+.price-column {
+  padding: 2rem 1rem;
+}
+
+.pricing-line {
+  padding: 0 15% 2%;
+}
+
+.signup-btn {
+  text-decoration: none;
+  color: #fff;
+}
+
+.signup-btn:hover {
+  color: #aaaaaa;
+}
+
+.p-button {
+  padding: 0 30%;
+}

@@ -1,0 +1,43 @@
+#features {
+  margin: 0;
+  padding: 7%;
+}
+
+.features-time {
+  background-color: #C38154;
+}
+
+.f-col {
+  line-height: 3;
+  margin: 1rem;
+  padding: .5rem;
+  border: 1px solis cyan;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.f-col img {
+  width: 14rem;
+  height: 8rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.f-logo:hover {
+  color: #a7ede7;
+}
+
+.clock{
+  margin-bottom: 2rem;
+}
+
+.timing {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+}
+
+.animals{
+  display: flex;
+  justify-content: space-evenly;
+}

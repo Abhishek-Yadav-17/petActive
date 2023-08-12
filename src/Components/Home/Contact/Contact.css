@@ -1,0 +1,29 @@
+
+#contact-info{
+    padding: 7% 15%;
+  }
+
+  #contact-info form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contact-info form input, #contact-info form textarea{
+    margin: 0.5rem 2rem;
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid rgb(8, 117, 117);
+  }
+
+  #contact-info form .info input{
+    width: 40%;
+  }
+  
+  .contact-heading{
+    padding: 0 15% 5%;
+  }
+  
+  .contact-line{
+    font-style: italic;
+    padding-bottom: 1rem;
+  }
