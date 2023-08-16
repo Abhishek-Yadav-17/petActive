@@ -1,0 +1,14 @@
+.logo{
+    height: 4rem;
+    object-fit: contain;
+}
+
+.nav-body{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: large;
+}
+
+.ddm{
+    background-color: #C38154;
+}

@@ -9,12 +9,7 @@ const Signup = () => {
       <Top />
       <section id="ownerID">
         <div class="row">
-          <div class="col-lg-4 left-nav">
-            <a href="/" class="navbar-brand petactive">
-              <i class="fa-solid fa-paw brand-icon"> </i> PetActive
-            </a>
-            <br />
-
+          <div class="col-lg-3 left-nav wrapper">
             <nav class="navbar navbar-expand-lg navbar-dark">
               <button
                 class="navbar-toggler"
@@ -58,14 +53,10 @@ const Signup = () => {
             </nav>
           </div>
 
-          <div class="col-lg-8 signup-info">
+          <div class="col-lg-9 signup-info">
             <section class="owner-info">
-              <h2 class="profile-heading">Human Profile</h2>
-              <form
-                class="user-info container"
-                action="/"
-                method="post"
-              >
+              <h2 class="profile-heading">Profile Details</h2>
+              <form class="user-info container" action="/" method="post">
                 <div className="name">
                   <label>Name</label>
                   <input
@@ -110,12 +101,7 @@ const Signup = () => {
                     name="Photograph"
                   />
                 </div>
-                <input
-                  type="submit"
-                  value="submit"
-                  className="btn"
-                  style={{ backgroundColor: "#C38154", color: "white" }}
-                />
+                <input type="submit" value="submit" className="bttn" />
               </form>
             </section>
           </div>

@@ -1,22 +1,39 @@
-.elements{
-  padding: 5rem;
+.elements {
   margin: 2rem;
-  text-align: left;
+  text-align: center;
+  display: inline-block;
 }
 
-.elements img{
+.elements img {
   width: 30rem;
   object-fit: contain;
   border-radius: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 
-.elements .desc{
-  display: flex;
-  flex-direction: column;
+.elements img:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-.elements .row{
+.elem-box {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   align-items: center;
-  margin: 5rem 0;
+  flex-direction: column;
+  width: 32rem;
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.elem-box p {
+  width: 30rem;
 }

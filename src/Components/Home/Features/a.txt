@@ -1,0 +1,46 @@
+<section id="features" class="features">
+            <h2>We provide...</h2>
+            <h2>Treatment, Love & Care</h2>
+            <div class="row animals">
+              <div class="col-lg-3 f-col">
+                <img src="https://i.pinimg.com/originals/fa/83/29/fa83291deaa29bffd19130513c773b33.jpg" alt="" />
+                <h5>Pet friendly Environment</h5>
+              </div>
+              <div class="col-lg-3 f-col">
+                <img src="https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/article5976.jpg" alt="" />
+                <h5>Healthy food for pets</h5>
+              </div>
+              <div class="col-lg-3 f-col">
+                <img src="https://www.thesprucepets.com/thmb/chCNKNnq0dyFpNUn_O8SIJPUf2I=/5640x3355/filters:fill(auto,1)/cats-playing-in-living-room-845697720-3ca4c7c053154ed5b17a0cc9ddd2cbd1.jpg" alt="" />
+                <h5>Large playing area</h5>
+              </div>
+            </div>
+          </section>
+
+
+          *****************************
+          #features {
+  margin: 0;
+  padding: 7%;
+}
+
+.f-col {
+  line-height: 3;
+  margin: 1rem;
+  padding: .5rem;
+  border: 1px solid cyan;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.f-col img {
+  width: 14rem;
+  height: 8rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.f-logo:hover {
+  color: #a7ede7;
+}
+

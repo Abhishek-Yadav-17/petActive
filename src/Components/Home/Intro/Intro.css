@@ -1,45 +1,9 @@
+.Intro{
+  background-color: #F0DE36;
+}
 
 .row {
   margin: 0;
-}
-
-.petactive {
-  color: #11999e;
-  font-family: "Pacifico", cursive;
-  font-size: 3rem;
-}
-
-.brand-icon {
-  margin: 3rem 0 1rem 1.5rem;
-  color: white;
-  transform: rotate(-30deg);
-  border: solid;
-  border-width: thin;
-  border-radius: 100%;
-  padding: 0.5rem;
-  background-color: #C38154;
-}
-
-.petactive:hover {
-  color: #e4f9f5;
-}
-
-.nav-link {
-  margin: 1rem;
-  font-family: "montserrat", sans-serif;
-  color: #11999e;
-}
-
-.navbar-home {
-  padding: 2rem 0 1.5rem 0;
-}
-
-.t-left {
-  text-align: left;
-  background-color: #323232;
-  background-image: url("https://i.pinimg.com/564x/d2/11/36/d2113673fddcba51b12f7412a39c6189.jpg");
-  background-size: cover;
-  padding: 0;
 }
 
 .home-left h1 {
@@ -51,4 +15,5 @@
 .home-left p {
   padding: 10rem;
   padding-top: 0;
+  font-size: large;
 }

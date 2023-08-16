@@ -1,45 +1,104 @@
-.left-nav {
-  text-align: left;
-  background-image: url("https://i.pinimg.com/564x/92/d4/c8/92d4c822545ce1939d5e2545ae838596.jpg");
-  background-size: cover;
-  background-color: black;
-  padding: 0;
+.signup{
+  background-color: #F0DE36;
 }
 
-.photo-upload {
-  border: solid;
-  border-color: black grey grey black;
+@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
+
+body {
+  background: #fff;
 }
 
-/* Owner Details */
-
-.signup-info {
-  padding: 0;
-}
-
-.owner-info {
-  padding: 10% 5rem 5rem 5rem;
-  text-align: center;
-}
-
-.name {
+.wrapper {
+  animation: scroll 100s linear infinite;
+  background: url("https://previews.123rf.com/images/vectorv/vectorv1907/vectorv190716206/126744588-red-bag-of-food-for-pet-icon-isolated-seamless-pattern-on-brown-background-food-for-animals-pet.jpg"),
+    #111111;
+  color: #eee;
+  min-width: 360px;
   display: flex;
-  /* flex-direction: column; */
-  justify-content: space-between;
-  padding: 1rem 2rem;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
 }
 
-.name input {
-  width: 60%;
-  padding: 0.5rem 1rem;
-  border-color: cadetblue;
+@keyframes scroll {
+  100% {
+    background-position: 0px -400%;
+  }
 }
 
-.name label {
-  font-weight: 700;
+@media (prefers-reduced-motion) {
+  .wrapper {
+    animation: scroll 800s linear infinite;
+  }
 }
 
-.owner-row {
+
+.owner-info h2{
+  font-family: 'Comfortaa', cursive;
+}
+
+.left-nav{
+  background-color: #C38154;
+  border-radius: 0 10px 10px 0;
+  box-shadow: #7a3100 1.95px 1.95px 2.6px;
+}
+
+.left-nav a{
+  color: black;
+  font-family: 'Comfortaa', cursive;
+  font-size: larger;
+  line-height: 3rem;
+}
+
+.signup-info .container{
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
+}
+
+.signup-info .container .name{
+  margin-bottom: 1rem;
+}
+
+.bttn{
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
   margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.bttn:disabled {
+  pointer-events: none;
+}
+
+.bttn:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.bttn:active {
+  box-shadow: none;
+  transform: translateY(0);
 }

@@ -36,9 +36,9 @@ const Pricing = () => {
                   <a className="signup-btn" href="signup">
                     <button
                       type="button"
-                      className="btn btn-lg btn-dark p-button"
+                      className="btn btn-lg p-button"
                     >
-                      SignUp <i className="fa-solid fa-user-plus"></i>
+                      Signup <i className="fa-solid fa-user-plus"></i>
                     </button>
                   </a>
                 </div>
@@ -64,9 +64,9 @@ const Pricing = () => {
                   <a className="signup-btn" href="signup">
                     <button
                       type="button"
-                      className="btn btn-lg btn-dark p-button"
+                      className="btn btn-lg p-button"
                     >
-                      SignUp <i className="fa-solid fa-user-plus"></i>
+                      Signup <i className="fa-solid fa-user-plus"></i>
                     </button>
                   </a>
                 </div>
@@ -92,9 +92,9 @@ const Pricing = () => {
                   <a className="signup-btn" href="signup">
                     <button
                       type="button"
-                      className="btn btn-lg btn-dark p-button"
+                      className="btn btn-lg p-button"
                     >
-                      SignUp <i className="fa-solid fa-user-plus"></i>
+                      Signup <i className="fa-solid fa-user-plus"></i>
                     </button>
                   </a>
                 </div>

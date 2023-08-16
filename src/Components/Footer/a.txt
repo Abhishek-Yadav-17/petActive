@@ -1,0 +1,62 @@
+<section id="footer">
+        <hr
+          style={{
+            height: "3rem",
+            backgroundColor: "black",
+            margin: "0",
+            borderRadius: "0 0 80% 80%",
+          }}
+        />
+        <div className="row">
+          <div className="left col-lg-6">
+            <a className="logo-footer" href="/">
+              <img src="images/PetActive.png" alt="sd" />
+            </a>
+            <div className="footer-elem">
+              <p class="copyright-line">© Copyright 2022 PetActive</p>
+            </div>
+          </div>
+          <div className="col-lg-6 right">
+            
+          </div>
+        </div>
+      </section>
+
+
+      ********************************************
+      .ftr{
+  background-color: #323232;
+}
+
+
+.footer-link {
+  padding: 2rem 1rem;
+  color: #feee15;
+}
+
+.footer-link:hover {
+  color: #bdb005;
+}
+
+.copyright-line {
+  font-family: "montserrat", sans-serif;
+  color: #fff;
+  text-align: left;
+}
+
+.footer-elem {
+  padding: 1rem;
+  text-align: end;
+}
+
+/* .logo-footer {
+  position: relative;
+  left: 1rem;
+  bottom: 11rem;
+} */
+
+.logo-footer img{
+  height: 5rem;
+  object-fit: contain;
+  margin: 1rem;
+}

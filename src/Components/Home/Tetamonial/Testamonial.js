@@ -14,46 +14,28 @@ const Testamonial = () => {
         }}
       />
       <div className="elements">
-        {db.map((elem) => {
-          if (elem.id%2===1) {
+        <h1>Our Services</h1>
+        <div className="row container">
+          {db.map((elem) => {
             return (
-              <div className="row">
-                <div className="col-xl-6">
+              <div className="elem-box col-lg-6">
+                <div className="">
                   <img src={elem.image} alt="" />
                 </div>
-                <div className="col-xl-6 desc">
+                <div className="desc">
                   <h2>{elem.title}</h2>
                   <p>{elem.desc}</p>
                   <button
                     className="btn"
-                    style={{ width: "8rem", backgroundColor: "cyan" }}
+                    style={{ width: "8rem", backgroundColor: "#C38154" }}
                   >
                     Get in touch
                   </button>
                 </div>
               </div>
             );
-          } else {
-            return (
-              <div className="row">
-                <div className="col-xl-6 desc">
-                  <h2>{elem.title}</h2>
-                  <p>{elem.desc}</p>
-                  <button
-                    className="btn"
-                    style={{ width: "8rem", backgroundColor: "cyan" }}
-                  >
-                    Get in touch
-                  </button>
-                </div>
-
-                <div className="col-xl-6">
-                  <img src={elem.image} alt="" />
-                </div>
-              </div>
-            );
-          }
-        })}
+          })}
+        </div>
       </div>
     </div>
   );

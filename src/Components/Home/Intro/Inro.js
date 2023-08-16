@@ -5,54 +5,10 @@ const Inro = () => {
   return (
     <div className="Intro">
       <div className="row">
-        <div class="col-xl-4 t-left">
-          <a href="/" class="navbar-brand petactive">
-            <i class="fa-solid fa-paw brand-icon"> </i> PetActive
-          </a>
-          <br />
-          <nav class="navbar navbar-expand-lg navbar-dark navbar-home">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarScroll"
-              aria-controls="navbarScroll"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarScroll">
-              <ul class="navbar-nav nav flex-column">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#features">
-                    Features{" "}
-                  </a>
-                </li>
-
-                <li class="nav-item active">
-                  <a class="nav-link" href="#testimonial">
-                    Testamonials{" "}
-                  </a>
-                </li>
-
-                <li class="nav-item active">
-                  <a class="nav-link" href="#pricing">
-                    Pricing{" "}
-                  </a>
-                </li>
-
-                <li class="nav-item active">
-                  <a class="nav-link" href="#contact-info">
-                    Contact{" "}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+        <div class="col-xl-5 t-left">
+          <img src="https://pettie.wpengine.com/wp-content/uploads/2023/05/Pty-Slider-4-Image.webp" alt="" />
         </div>
-        <div className="col-xl-8 home-left">
+        <div className="col-xl-7 home-left">
           <h1>Welcome to PetActive!</h1>
           <h5>How We Provide TLC</h5>
           <p>

@@ -6,8 +6,13 @@
   padding: 7% 10%;
 }
 
-.card-header {
-  background-color: #11999e;
+#pricing .card{
+  transition: all 0.3s ease-in-out;
+}
+
+#pricing .card:hover{
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .card-header img{
@@ -33,4 +38,16 @@
 
 .p-button {
   padding: 0 30%;
+  border: 2px solid black;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.p-button:hover{
+  background-color: #C38154;
+  color: black;
+}
+
+.p-button i{
+  font-size: 1rem;
 }

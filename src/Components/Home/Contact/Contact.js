@@ -35,7 +35,12 @@ const Contact = () => {
             rows="10"
             placeholder="Type your message here..."
           ></textarea>
-          <input type="submit" class="btn" style={{backgroundColor: "#C38154", color:"white"}} value="Contact us" />
+          <input
+            type="submit"
+            class="btn"
+            style={{ backgroundColor: "#C38154", color: "white" }}
+            value="Contact us"
+          />
         </form>
       </section>
     </div>
