@@ -22,7 +22,7 @@ const Pricing = () => {
             <div className="card">
               <div className="card-header">
                 <img
-                  src="https://www.insidedogsworld.com/wp-content/uploads/2016/03/Dog-Pictures.jpg"
+                  src="./images/dog.jpg"
                   class="card-img-top"
                   alt="..."
                 />
@@ -32,16 +32,6 @@ const Pricing = () => {
                 <p>Less then 1 Week: Rs 100/day</p>
                 <p>1 week: Rs 500</p>
                 <p>More then 1 Week: Rs 70/day</p>
-                <div className="d-grid gap-2">
-                  <a className="signup-btn" href="signup">
-                    <button
-                      type="button"
-                      className="btn btn-lg p-button"
-                    >
-                      Signup <i className="fa-solid fa-user-plus"></i>
-                    </button>
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -60,16 +50,6 @@ const Pricing = () => {
                 <p>Less then 1 Week: Rs 150/day</p>
                 <p>1 week: Rs 700</p>
                 <p>More then 1 Week: Rs 110/day</p>
-                <div className="d-grid gap-2">
-                  <a className="signup-btn" href="signup">
-                    <button
-                      type="button"
-                      className="btn btn-lg p-button"
-                    >
-                      Signup <i className="fa-solid fa-user-plus"></i>
-                    </button>
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -88,16 +68,6 @@ const Pricing = () => {
                 <p>Less then 1 Week: Rs 200/day</p>
                 <p>1 week: Rs 800</p>
                 <p>More then 1 Week: Rs 150/day</p>
-                <div className="d-grid gap-2">
-                  <a className="signup-btn" href="signup">
-                    <button
-                      type="button"
-                      className="btn btn-lg p-button"
-                    >
-                      Signup <i className="fa-solid fa-user-plus"></i>
-                    </button>
-                  </a>
-                </div>
               </div>
             </div>
           </div>

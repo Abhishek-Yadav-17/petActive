@@ -3,13 +3,13 @@ import "./Intro.css";
 
 const Inro = () => {
   return (
-    <div className="Intro">
+    <div className="Intro  pt-5">
       <div className="row">
         <div class="col-xl-5 t-left">
           <img src="https://pettie.wpengine.com/wp-content/uploads/2023/05/Pty-Slider-4-Image.webp" alt="" />
         </div>
         <div className="col-xl-7 home-left">
-          <h1>Welcome to PetActive!</h1>
+          <h1>Welcome to <span style={{color: "brown"}}>PetActive!</span></h1>
           <h5>How We Provide TLC</h5>
           <p>
             Our hospital has various services designed to help animals heal as

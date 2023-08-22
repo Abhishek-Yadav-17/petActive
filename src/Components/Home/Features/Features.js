@@ -43,7 +43,7 @@ const Features = () => {
             </div>
             <div class="carousel-inner car-animal">
               <div class="carousel-item active">
-                <img src="https://i.pinimg.com/originals/fa/83/29/fa83291deaa29bffd19130513c773b33.jpg" class="d-block w-100" alt="..." />
+                <img src="https://dogsbestlife.com/wp-content/uploads/2022/03/dog-bed-FunnyFuzzy-UK.jpg" class="d-block w-100" alt="..." />
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Pet friendly Environment</h5>
                   <p>

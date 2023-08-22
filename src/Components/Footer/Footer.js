@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,10 +13,12 @@ const Footer = () => {
         />
         <div className="card-img-overlay">
           <a className="logo-footer" href="/">
-            <img src="images/PetActive.png" alt="sd" />
+            <img src="./images/PetActive.png" alt="logo" />
           </a>
           <div className="row footer-links">
-            <div className="col-lg-3"></div>
+            <div className="col-lg-3">
+              <button className="btn btn-warning"> <Link to="/admin/">Admin Login</Link> </button>
+            </div>
             <div className="col-lg-3 links">
               <a href="/">
                 <h5>Information</h5>
