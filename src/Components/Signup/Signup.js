@@ -1,113 +1,178 @@
 import React from "react";
 import "./Signup.css";
-import Top from "../Navbar/Top";
-import Footer from "../Footer/Footer";
 
 const Signup = () => {
   return (
     <div className="signup">
-      <Top />
-      <section id="ownerID">
-        <div class="row">
-          <div class="col-lg-3 left-nav wrapper">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarScroll"
-                aria-controls="navbarScroll"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
+      <section class="gradien">
+        <div class="container py-5">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="card-body p-md-5 mx-md-4">
+                      <div class="text-center">
+                        <img
+                          src="images/PetActive.png"
+                          style={{ width: "185px" }}
+                          alt="logo"
+                        />
+                        <h4 class="mt-1 mb-5 pb-1">
+                          Create PetActive Account
+                        </h4>
+                      </div>
 
-              <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav nav flex-column">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="signupPage.html">
-                      Human profile
-                    </a>
-                  </li>
+                      <form>
+                        <p>Please Signup</p>
 
-                  <li class="nav-item active">
-                    <a class="nav-link" href="signupPage2.html">
-                      Pet basic{" "}
-                    </a>
-                  </li>
+                        <div class="form-outline mb-4">
+                          <input
+                            type="email"
+                            id="form2Example11"
+                            class="form-control"
+                            placeholder="Phone number or email address"
+                          />
+                          <label class="form-label" for="form2Example11">
+                            Email
+                          </label>
+                        </div>
 
-                  <li class="nav-item active">
-                    <a class="nav-link" href="signupPage3.html">
-                      Pet details{" "}
-                    </a>
-                  </li>
+                        <div class="form-outline mb-4">
+                          <input
+                            type="text"
+                            id="form2Example11"
+                            class="form-control"
+                            placeholder="Customer name"
+                          />
+                          <label class="form-label" for="form2Example11">
+                            Name
+                          </label>
+                        </div>
 
-                  <li class="nav-item active">
-                    <a class="nav-link" href="/">
-                      Confirmation{" "}
-                    </a>
-                  </li>
-                </ul>
+                        <div class="form-outline mb-4">
+                          <input
+                            type="text"
+                            id="form2Example11"
+                            class="form-control"
+                            placeholder="dd/mm/yyyy"
+                          />
+                          <label class="form-label" for="form2Example11">
+                            Date of Birth
+                          </label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <input
+                            type="text"
+                            id="form2Example11"
+                            class="form-control"
+                            placeholder="Aadhar/PAN"
+                          />
+                          <label class="form-label" for="form2Example11">
+                            Id Type
+                          </label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <input
+                            type="text"
+                            id="form2Example11"
+                            class="form-control"
+                            placeholder="Unique number"
+                          />
+                          <label class="form-label" for="form2Example11">
+                            Id number
+                          </label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <input
+                            type="text"
+                            id="form2Example11"
+                            class="form-control"
+                            placeholder="M/F"
+                          />
+                          <label class="form-label" for="form2Example11">
+                            Gender
+                          </label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <textarea
+                            type="text"
+                            id="form2Example11"
+                            class="form-control"
+                            placeholder="Address"
+                          />
+                          <label class="form-label" for="form2Example11">
+                            Address
+                          </label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <input
+                            type="text"
+                            id="form2Example11"
+                            class="form-control"
+                            placeholder="URL"
+                          />
+                          <label class="form-label" for="form2Example11">
+                            Image URL
+                          </label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <input
+                            type="password"
+                            id="form2Example22"
+                            class="form-control"
+                          />
+                          <label class="form-label" for="form2Example22">
+                            Password
+                          </label>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                          <input
+                            type="password"
+                            id="form2Example22"
+                            class="form-control"
+                          />
+                          <label class="form-label" for="form2Example22">
+                            Confirm Password
+                          </label>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1">
+                          <button
+                            class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 p-3 w-100"
+                            type="button"
+                          >
+                            Signup
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                      <h4 class="mb-4">We are more than just a company</h4>
+                      <p class="small mb-0">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex
+                        ea commodo consequat.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </nav>
-          </div>
-
-          <div class="col-lg-9 signup-info">
-            <section class="owner-info">
-              <h2 class="profile-heading">Profile Details</h2>
-              <form class="user-info container" action="/" method="post">
-                <div className="name">
-                  <label>Name</label>
-                  <input
-                    className="form-control"
-                    type="text"
-                    name="Your name"
-                  />
-                </div>
-                <div className="name">
-                  <label>Email </label>
-                  <input className="form-control" type="text" name="Email" />
-                </div>
-                <div className="name">
-                  <label>Password </label>
-                  <input className="form-control" type="password" name="pw" />
-                </div>
-                <div className="name">
-                  <label>Confirm Password </label>
-                  <input className="form-control" type="password" name="cpw" />
-                </div>
-                <div className="name">
-                  <label>Contact No. </label>
-                  <input
-                    className="form-control"
-                    type="text"
-                    name="Contact No."
-                  />
-                </div>
-                <div className="name">
-                  <label>Address </label>
-                  <input className="form-control" type="text" name="address" />
-                </div>
-                <div className="name">
-                  <label>Gender</label>
-                  <input className="form-control" type="text" name="Gender" />
-                </div>
-                <div className="name">
-                  <label>Upload Your Photo </label>
-                  <input
-                    className="form-control"
-                    type="file"
-                    name="Photograph"
-                  />
-                </div>
-                <input type="submit" value="submit" className="bttn" />
-              </form>
-            </section>
+            </div>
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

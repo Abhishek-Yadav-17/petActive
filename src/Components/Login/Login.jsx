@@ -5,7 +5,7 @@ const Login = (props) => {
   console.log(props);
   return (
     <div className="ad-login" style={{backgroundColor: "yellow"}}>
-      <section class="gradien">
+      <section>
         <div class="container py-5">
           <div class="row d-flex justify-content-center align-items-center">
             <div class="col-xl-10">
