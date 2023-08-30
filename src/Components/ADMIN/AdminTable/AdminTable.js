@@ -1,5 +1,6 @@
 import React from "react";
 import "./AdminTable.css";
+import { Link } from "react-router-dom";
 
 const AddAcs = () => {
   return (
@@ -29,11 +30,11 @@ const AddAcs = () => {
                           </thead>
                           <tbody>
                             <tr>
-                              <td><a className="btn" href="/admin/accessories">List Accessories</a></td>
-                              <td><a className="btn" href="/admin/users">List Customers</a></td>
-                              <td><a className="btn" href="/admin/doctors">List Doctors</a></td>
-                              <td><a className="btn" href="/admin/pets">List Pet</a></td>
-                              <td><a className="btn" href="/admin/services">List Pet Services</a></td>
+                              <td><Link className="btn" to="/admin/accessories">List Accessories</Link></td>
+                              <td><Link className="btn" to="/admin/users">List Customers</Link></td>
+                              <td><Link className="btn" to="/admin/doctors">List Doctors</Link></td>
+                              <td><Link className="btn" to="/admin/pets">List Pet</Link></td>
+                              <td><Link className="btn" to="/admin/services">List Pet Services</Link></td>
                             </tr>
                           </tbody>
                         </table>

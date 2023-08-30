@@ -18,7 +18,7 @@ const Testamonial = () => {
         <div className="row container">
           {db.map((elem) => {
             return (
-              <div className="elem-box col-lg-6">
+              <div className="elem-box col-lg-6" key={elem.id}>
                 <div className="">
                   <img src={elem.image} alt="" />
                 </div>

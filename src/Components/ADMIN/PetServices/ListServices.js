@@ -1,12 +1,13 @@
 import React from "react";
 import "./ListServices.css";
+import { Link } from "react-router-dom";
 
 const ListServices = () => {
   return (
     <div>
-      <a className="btn" href="/admin/addservice">
+      <Link className="btn" to="/admin/addservice">
         Add Service
-      </a>
+      </Link>
       <section style={{ backgroundColor: "#eee" }}>
         <div className="container py-5">
           <div className="row justify-content-center">
@@ -21,7 +22,7 @@ const ListServices = () => {
                           src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(5).webp"
                           className="w-100"
                         />
-                        <a href="#!">
+                        <Link to="/">
                           <div className="hover-overlay">
                             <div
                               className="mask"
@@ -30,7 +31,7 @@ const ListServices = () => {
                               }}
                             ></div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="col-md-6 col-lg-6 col-xl-6">
@@ -89,13 +90,13 @@ const ListServices = () => {
                         >
                           Remove
                         </button>
-                        <a
-                          href="/admin/editservice"
+                        <Link
+                          to="/admin/editservice"
                           className="btn btn-outline-primary btn-sm mt-2"
                           type="button"
                         >
                           Update
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

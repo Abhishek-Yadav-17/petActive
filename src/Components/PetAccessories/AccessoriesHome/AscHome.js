@@ -1,7 +1,7 @@
 import React from "react";
 import "./AscHome.css";
 import Footer from "../../Footer/Footer";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import AcsNav from "./AcsNav";
 
 const AscHome = () => {
@@ -21,16 +21,16 @@ const AscHome = () => {
                 cat litter, cages and aquariums
               </p>
               <p>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="btn btn-warning"
                   style={{ marginRight: "2rem" }}
                 >
                   Donation
-                </a>
-                <a href="/" className="btn btn-outline-dark">
+                </Link>
+                <Link to="/" className="btn btn-outline-dark">
                   Helpline
-                </a>
+                </Link>
               </p>
             </div>
           </div>

@@ -5,7 +5,7 @@ const Inro = () => {
   return (
     <div className="Intro  pt-5">
       <div className="row">
-        <div class="col-xl-5 t-left">
+        <div className="col-xl-5 t-left">
           <img src="https://pettie.wpengine.com/wp-content/uploads/2023/05/Pty-Slider-4-Image.webp" alt="" />
         </div>
         <div className="col-xl-7 home-left">

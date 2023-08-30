@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const PetList = () => {
   return (
@@ -30,7 +31,7 @@ const PetList = () => {
                           <div className="candidate-list-info">
                             <div className="candidate-list-title">
                               <h5 className="mb-0">
-                                <a href="/">Brooke Kelly</a>
+                                <Link to="/">Brooke Kelly</Link>
                               </h5>
                             </div>
                             <div className="candidate-list-option">
@@ -49,12 +50,12 @@ const PetList = () => {
                         </div>
                       </td>
                       <td className="candidate-list-favourite-time text-center">
-                        <a
+                        <Link
                           className="candidate-list-favourite order-2 text-danger"
-                          href="/"
+                          to="/"
                         >
                           <i className="fas fa-heart"></i>
-                        </a>
+                        </Link>
                         <span className="candidate-list-time order-1">
                           Shortlisted
                         </span>
@@ -62,37 +63,37 @@ const PetList = () => {
                       <td>
                         <ul className="list-unstyled mb-0 d-flex justify-content-end">
                           <li>
-                            <a
-                              href="/"
+                            <Link
+                              to="/"
                               className="text-primary"
                               data-toggle="tooltip"
                               title=""
                               data-original-title="view"
                             >
                               <i className="far fa-eye"></i>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              href="/"
+                            <Link
+                              to="/"
                               className="text-info"
                               data-toggle="tooltip"
                               title=""
                               data-original-title="Edit"
                             >
                               <i className="fas fa-pencil-alt"></i>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              href="/"
+                            <Link
+                              to="/"
                               className="text-danger"
                               data-toggle="tooltip"
                               title=""
                               data-original-title="Delete"
                             >
                               <i className="far fa-trash-alt"></i>
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </td>
@@ -107,15 +108,15 @@ const PetList = () => {
                     </li>
                     <li className="page-item">
                       {" "}
-                      <a className="page-link" href="/">
+                      <Link className="page-link" to="/">
                         Next
-                      </a>{" "}
+                      </Link>{" "}
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
     </div>

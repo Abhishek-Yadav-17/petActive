@@ -1,14 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import "./AscHome.css";
-import db from "./fake.json";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../Redux/Slices/CartSlice";
 
 const AscList = () => {
-  return (
-    <div>
-      <div className="album py-10 pet-show">
+  const [item, setItem] = useState([]);
+  const [load, setLoad] = useState(false);
+  const dispatch = useDispatch();
+
+  const fetchdata = async () => {
+    try {
+      const res = await fetch("https://fakestoreapi.com/products");
+      const json = await res.json();
+      setItem(json)
+      setLoad(true);
+    } catch {
+      console.error();
+    }
+  };
+
+  
+  useEffect(() => {
+    fetchdata();
+  }, []);
+
+  const handleAdd = (obj) =>{
+    console.log(obj);
+    dispatch(addItem(obj));
+  }
+
+  if (load) {
+    return (
+      <div>
+        <div className="album py-10 pet-show">
           <div className="mx-4" style={{ paddingBottom: "2rem" }}>
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-              {db.map((elem) => (
+              {item.map((elem) => (
                 <div className="col" key={elem.id}>
                   <div className="card shadow-sm mx-2">
                     <img
@@ -29,20 +57,21 @@ const AscList = () => {
                       <h5>Rating: {elem.rating.rate} </h5>
                       <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group">
-                          <a href='/accessories/details'
+                          <Link
+                            to="/accessories/details"
                             type="button"
                             className="btn btn-sm btn-outline-secondary"
                           >
                             View
-                          </a>
+                          </Link>
                           <button
                             type="button"
                             className="btn btn-sm btn-outline-secondary"
                           >
-                            <i class="fa-regular fa-heart"></i>
+                            <i className="fa-regular fa-heart"></i>
                           </button>
                         </div>
-                        <small className="text-muted">9 mins</small>
+                        <small className="btn btn-warning" onClick={()=>{handleAdd(elem)}} >Add to cart</small>
                       </div>
                     </div>
                   </div>
@@ -51,8 +80,13 @@ const AscList = () => {
             </div>
           </div>
         </div>
-    </div>
-  )
-}
+      </div>
+    );
+  } else {
+    <div className="container">
+      <h1>Please wait...</h1>
+    </div>;
+  }
+};
 
-export default AscList
+export default AscList;

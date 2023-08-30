@@ -23,7 +23,7 @@ const Pricing = () => {
               <div className="card-header">
                 <img
                   src="./images/dog.jpg"
-                  class="card-img-top"
+                  className="card-img-top"
                   alt="..."
                 />
               </div>
@@ -41,7 +41,7 @@ const Pricing = () => {
               <div className="card-header">
                 <img
                   src="https://3.bp.blogspot.com/-dui-f0hQUHE/U0Qs5dOcWII/AAAAAAAACpg/S1lb9AnsMU4/s1600/loveable-cat-wallpaper-free.jpg"
-                  class="card-img-top"
+                  className="card-img-top"
                   alt="..."
                 />
               </div>
@@ -59,7 +59,7 @@ const Pricing = () => {
               <div className="card-header">
                 <img
                   src="https://i.pinimg.com/originals/06/15/6f/06156f6767c093807b655287e2bb73f2.jpg"
-                  class="card-img-top"
+                  className="card-img-top"
                   alt="..."
                 />
               </div>

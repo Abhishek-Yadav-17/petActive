@@ -5,7 +5,7 @@
 
 .nav-body {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   font-size: large;
 }
 

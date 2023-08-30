@@ -1,24 +1,25 @@
 import React from "react";
 import "./Signup.css";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
     <div className="signup">
-      <section class="gradien">
-        <div class="container py-5">
-          <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-xl-10">
-              <div class="card rounded-3 text-black">
-                <div class="row g-0">
-                  <div class="col-lg-6">
-                    <div class="card-body p-md-5 mx-md-4">
-                      <div class="text-center">
-                        <img
+      <section className="gradien">
+        <div className="container py-5">
+          <div className="row d-flex justify-content-center align-items-center">
+            <div className="col-xl-10">
+              <div className="card rounded-3 text-black">
+                <div className="row g-0">
+                  <div className="col-lg-6">
+                    <div className="card-body p-md-5 mx-md-4">
+                      <div className="text-center">
+                      <Link to="/"><img
                           src="images/PetActive.png"
                           style={{ width: "185px" }}
                           alt="logo"
-                        />
-                        <h4 class="mt-1 mb-5 pb-1">
+                        /></Link>
+                        <h4 className="mt-1 mb-5 pb-1">
                           Create PetActive Account
                         </h4>
                       </div>
@@ -26,127 +27,127 @@ const Signup = () => {
                       <form>
                         <p>Please Signup</p>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <input
                             type="email"
                             id="form2Example11"
-                            class="form-control"
+                            className="form-control"
                             placeholder="Phone number or email address"
                           />
-                          <label class="form-label" for="form2Example11">
+                          <label className="form-label" for="form2Example11">
                             Email
                           </label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <input
                             type="text"
                             id="form2Example11"
-                            class="form-control"
+                            className="form-control"
                             placeholder="Customer name"
                           />
-                          <label class="form-label" for="form2Example11">
+                          <label className="form-label" for="form2Example11">
                             Name
                           </label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <input
                             type="text"
                             id="form2Example11"
-                            class="form-control"
+                            className="form-control"
                             placeholder="dd/mm/yyyy"
                           />
-                          <label class="form-label" for="form2Example11">
+                          <label className="form-label" for="form2Example11">
                             Date of Birth
                           </label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <input
                             type="text"
                             id="form2Example11"
-                            class="form-control"
+                            className="form-control"
                             placeholder="Aadhar/PAN"
                           />
-                          <label class="form-label" for="form2Example11">
+                          <label className="form-label" for="form2Example11">
                             Id Type
                           </label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <input
                             type="text"
                             id="form2Example11"
-                            class="form-control"
+                            className="form-control"
                             placeholder="Unique number"
                           />
-                          <label class="form-label" for="form2Example11">
+                          <label className="form-label" for="form2Example11">
                             Id number
                           </label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <input
                             type="text"
                             id="form2Example11"
-                            class="form-control"
+                            className="form-control"
                             placeholder="M/F"
                           />
-                          <label class="form-label" for="form2Example11">
+                          <label className="form-label" for="form2Example11">
                             Gender
                           </label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <textarea
                             type="text"
                             id="form2Example11"
-                            class="form-control"
+                            className="form-control"
                             placeholder="Address"
                           />
-                          <label class="form-label" for="form2Example11">
+                          <label className="form-label" for="form2Example11">
                             Address
                           </label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <input
                             type="text"
                             id="form2Example11"
-                            class="form-control"
+                            className="form-control"
                             placeholder="URL"
                           />
-                          <label class="form-label" for="form2Example11">
+                          <label className="form-label" for="form2Example11">
                             Image URL
                           </label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <input
                             type="password"
                             id="form2Example22"
-                            class="form-control"
+                            className="form-control"
                           />
-                          <label class="form-label" for="form2Example22">
+                          <label className="form-label" for="form2Example22">
                             Password
                           </label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div className="form-outline mb-4">
                           <input
                             type="password"
                             id="form2Example22"
-                            class="form-control"
+                            className="form-control"
                           />
-                          <label class="form-label" for="form2Example22">
+                          <label className="form-label" for="form2Example22">
                             Confirm Password
                           </label>
                         </div>
 
-                        <div class="text-center pt-1 mb-5 pb-1">
+                        <div className="text-center pt-1 mb-5 pb-1">
                           <button
-                            class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 p-3 w-100"
+                            className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 p-3 w-100"
                             type="button"
                           >
                             Signup
@@ -155,10 +156,10 @@ const Signup = () => {
                       </form>
                     </div>
                   </div>
-                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                      <h4 class="mb-4">We are more than just a company</h4>
-                      <p class="small mb-0">
+                  <div className="col-lg-6 d-flex align-items-center gradient-custom-2">
+                    <div className="text-white px-3 py-4 p-md-5 mx-md-4">
+                      <h4 className="mb-4">We are more than just a company</h4>
+                      <p className="small mb-0">
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit, sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua. Ut enim ad minim veniam, quis

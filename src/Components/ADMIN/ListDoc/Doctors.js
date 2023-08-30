@@ -1,10 +1,11 @@
 import React from "react";
 import "./Doctors.css";
+import { Link } from "react-router-dom";
 
 const Doctors = () => {
   return (
     <div>
-        <a href="/admin/add_doc" className="btn">Add Doctor</a>
+        <Link to="/admin/add_doc" className="btn">Add Doctor</Link>
       <div className="container mt-3 mb-4">
         <div className="col-lg-9 mt-4 mt-lg-0">
           <div className="row">
@@ -51,50 +52,50 @@ const Doctors = () => {
                         </div>
                       </td>
                       <td className="candidate-list-favourite-time text-center">
-                        <a
+                        <Link
                           className="candidate-list-favourite order-2 text-danger"
-                          href="/"
+                          to="/"
                         >
                           <i className="fas fa-heart"></i>
-                        </a>
+                        </Link>
                         <span className="candidate-list-time order-1">
-                          Shortlisted
+                          Verified
                         </span>
                       </td>
                       <td>
-                        <ul className="list-unstyled mb-0 d-flex justify-content-end">
+                        <ul className="list-unstyled mb-0 d-flex justify-content-between">
                           <li>
-                            <a
-                              href="/"
+                            <Link
+                              to="/"
                               className="text-primary"
                               data-toggle="tooltip"
                               title=""
                               data-original-title="view"
                             >
                               <i className="far fa-eye"></i>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              href="/"
+                            <Link
+                              to="/admin/editdoctors"
                               className="text-info"
                               data-toggle="tooltip"
-                              title=""
+                              title="edit_doc"
                               data-original-title="Edit"
                             >
                               <i className="fas fa-pencil-alt"></i>
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a
-                              href="/"
+                            <span
+                              onClick={()=>{alert("Doctor removed from list...")}}
                               className="text-danger"
                               data-toggle="tooltip"
-                              title=""
+                              title="delete"
                               data-original-title="Delete"
                             >
                               <i className="far fa-trash-alt"></i>
-                            </a>
+                            </span>
                           </li>
                         </ul>
                       </td>
@@ -109,9 +110,9 @@ const Doctors = () => {
                     </li>
                     <li className="page-item">
                       {" "}
-                      <a className="page-link" href="/">
+                      <Link className="page-link" to="/">
                         Next
-                      </a>{" "}
+                      </Link>{" "}
                     </li>
                   </ul>
                 </div>

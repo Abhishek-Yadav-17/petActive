@@ -19,7 +19,9 @@ const Top = () => {
 
   return (
     <div className="top">
-      <nav className={`nav ${show && "nav__black"} navb navbar navbar-expand-lg`}>
+      <nav
+        className={`nav ${show && "nav__black"} navb navbar navbar-expand-lg`}
+      >
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -36,70 +38,70 @@ const Top = () => {
             className="collapse navbar-collapse nav-body"
             id="navbarNavDropdown"
           >
-            <a className="navbar-brand" href="/">
+            <Link className="navbar-brand" to="/">
               <img className="logo" src="images/PetActive.png" alt="sd" />
-            </a>
+            </Link>
             <span className="nav-item">
-              <a className="nav-link" href="/" style={{ color: "black" }}>
+              <Link className="nav-link" to="/" style={{ color: "black" }}>
                 About
-              </a>
+              </Link>
             </span>
 
             <span className="nav-item">
-              <a
+              <Link
                 className="nav-link"
-                href="/accessories"
+                to="/accessories"
                 style={{ color: "black" }}
               >
                 Shop
-              </a>
+              </Link>
             </span>
             <span className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
-                href="/"
+                to="/"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 style={{ color: "black" }}
               >
                 Services
-              </a>
+              </Link>
               <ul className="dropdown-menu ddm">
                 <span>
-                  <a className="dropdown-item" href="/">
+                  <Link className="dropdown-item" to="/">
                     Broading
-                  </a>
+                  </Link>
                 </span>
                 <span>
-                  <a className="dropdown-item" href="/">
+                  <Link className="dropdown-item" to="/">
                     Training
-                  </a>
+                  </Link>
                 </span>
                 <span>
-                  <a className="dropdown-item" href="/">
+                  <Link className="dropdown-item" to="/">
                     Health food
-                  </a>
+                  </Link>
                 </span>
                 <span>
-                  <a className="dropdown-item" href="/">
+                  <Link className="dropdown-item" to="/">
                     Dog Walker
-                  </a>
+                  </Link>
                 </span>
                 <span>
-                  <a className="dropdown-item" href="/">
+                  <Link className="dropdown-item" to="/">
                     Veterinary care
-                  </a>
+                  </Link>
                 </span>
                 <span>
-                  <a className="dropdown-item" href="/">
+                  <Link className="dropdown-item" to="/">
                     Activities
-                  </a>
+                  </Link>
                 </span>
                 <span>
-                  <a className="dropdown-item" href="/">
+                  <Link className="dropdown-item" to="/">
                     Puppy Programs
-                  </a>
+                  </Link>
                 </span>
               </ul>
             </span>
@@ -110,18 +112,18 @@ const Top = () => {
                 to="/login"
                 style={{ color: "black" }}
               >
-                Login
+                Pet Purchase/Adopt
               </Link>
             </span>
             <span className="nav-item">
-              <a
+              <Link
                 className="nav-link active"
                 aria-current="page"
-                href="/signup"
+                to="/login"
                 style={{ color: "black" }}
               >
-                Signup
-              </a>
+                Login/Signup
+              </Link>
             </span>
           </div>
         </div>

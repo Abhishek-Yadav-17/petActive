@@ -22,6 +22,9 @@ import EditServices from "./Components/ADMIN/PetServices/EditServices/EditServic
 import AddA from "./Components/ADMIN/ListAcs/AddAcs/AddA";
 import AddD from "./Components/ADMIN/ListDoc/AddDoc/AddD";
 import AddService from "./Components/ADMIN/PetServices/AddService/AddService";
+import { Provider } from "react-redux";
+import Store from "./Redux/Store/Store";
+import EditDoc from "./Components/ADMIN/ListDoc/EditDoc/EditDoc";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -58,55 +61,59 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <AdHome />,
+    element: false ? <Login name="Admin" /> : <AdHome />,
     children: [
       {
         path: "/admin/",
-        element: <AdminTable/>,
+        element: <AdminTable />,
       },
       {
         path: "/admin/accessories",
-        element: <ListAcs/>
+        element: <ListAcs />,
       },
       {
         path: "/admin/doctors",
-        element: <Doctors/>
+        element: <Doctors />,
+      },
+      {
+        path: "/admin/editdoctors",
+        element: <EditDoc />,
       },
       {
         path: "/admin/pets",
-        element: <Pets/>
+        element: <Pets />,
       },
       {
         path: "/admin/users",
-        element: <Users/>
+        element: <Users />,
       },
       {
         path: "/admin/services",
-        element: <ListServices/>
+        element: <ListServices />,
       },
       {
         path: "/admin/editaccessory",
-        element: <EditAcs/>
+        element: <EditAcs />,
       },
       {
         path: "/admin/doctors",
-        element: <EditAcs/>
+        element: <EditAcs />,
       },
       {
         path: "/admin/editservice",
-        element: <EditServices/>
+        element: <EditServices />,
       },
       {
         path: "/admin/addacs",
-        element: <AddA/>
+        element: <AddA />,
       },
       {
         path: "/admin/add_doc",
-        element: <AddD/>
+        element: <AddD />,
       },
       {
         path: "/admin/addservice",
-        element: <AddService/>
+        element: <AddService />,
       },
     ],
   },
@@ -114,10 +121,16 @@ const router = createBrowserRouter([
     path: "/userprofile",
     element: <Profile />,
   },
+  {
+    path: "/petpurchase",
+    element:""
+  }
 ]);
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={Store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

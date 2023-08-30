@@ -1,5 +1,6 @@
 import React from "react";
 import "./AscHome.css";
+import { Link } from "react-router-dom";
 
 const AcsNav = () => {
   return (
@@ -25,19 +26,19 @@ const AcsNav = () => {
                 <h4 className="text-white">Contact</h4>
                 <ul className="list-unstyled">
                   <li>
-                    <a href="/" className="text-white">
+                    <Link to="/" className="text-white">
                       Follow on Twitter
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/" className="text-white">
+                    <Link to="/" className="text-white">
                       Like on Facebook
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/" className="text-white">
+                    <Link to="/" className="text-white">
                       Email me
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -49,20 +50,20 @@ const AcsNav = () => {
           style={{ backgroundColor: "brown" }}
         >
           <div className="container">
-            <a href="/" className="navbar-brand d-flex align-items-center">
+            <Link to="/" className="navbar-brand d-flex align-items-center">
               <i className="fa-solid fa-dog mx-1"></i>
               <strong>PetActive</strong>
-            </a>
+            </Link>
             <div className="options">
-              <a href="/accessories/cart" className="btn">
+              <Link to="/accessories/cart" className="btn">
                 <i
                   style={{ color: "white" }}
                   className="fa-solid fa-cart-plus"
                 ></i>
-              </a>
-              <a href="/userprofile" className="btn">
-                <i style={{ color: "white" }} class="fa-regular fa-user"></i>
-              </a>
+              </Link>
+              <Link to="/userprofile" className="btn">
+                <i style={{ color: "white" }} className="fa-regular fa-user"></i>
+              </Link>
             </div>
             <button
               className="navbar-toggler"

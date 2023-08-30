@@ -14,9 +14,9 @@ const Contact = () => {
       />
 
       <section id="contact-info">
-        <h2 class="contact-heading">For more informaton...</h2>
+        <h2 className="contact-heading">For more informaton...</h2>
         <h4>Contact us</h4>
-        <p class="contact-line">
+        <p className="contact-line">
           101, Building C1, Soham Plaza, Manpada Service Road, Manpada, Thane
           West, Maharashtra 400607, India
         </p>
@@ -37,7 +37,7 @@ const Contact = () => {
           ></textarea>
           <input
             type="submit"
-            class="btn"
+            className="btn"
             style={{ backgroundColor: "#C38154", color: "white" }}
             value="Contact us"
           />
