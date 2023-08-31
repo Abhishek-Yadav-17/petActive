@@ -25,6 +25,8 @@ import AddService from "./Components/ADMIN/PetServices/AddService/AddService";
 import { Provider } from "react-redux";
 import Store from "./Redux/Store/Store";
 import EditDoc from "./Components/ADMIN/ListDoc/EditDoc/EditDoc";
+import EditUser from "./Components/UserProfile/EditUser";
+import User from "./Components/UserProfile/User";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -119,12 +121,22 @@ const router = createBrowserRouter([
   },
   {
     path: "/userprofile",
-    element: <Profile />,
+    element: <User />,
+    children: [
+      {
+        path: "/userprofile/",
+        element: <Profile />,
+      },
+      {
+        path: "/userprofile/edit",
+        element: <EditUser />,
+      },
+    ],
   },
   {
     path: "/petpurchase",
-    element:""
-  }
+    element: "",
+  },
 ]);
 
 root.render(

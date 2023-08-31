@@ -43,7 +43,7 @@ const Features = () => {
             </div>
             <div className="carousel-inner car-animal">
               <div className="carousel-item active">
-                <img src="https://dogsbestlife.com/wp-content/uploads/2022/03/dog-bed-FunnyFuzzy-UK.jpg" className="d-block w-100" alt="..." />
+                <img src="./images/dog-bed-FunnyFuzzy-UK.jpg" className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Pet friendly Environment</h5>
                   <p>
@@ -52,7 +52,7 @@ const Features = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src="https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/article5976.jpg" className="d-block w-100" alt="..." />
+                <img src="./images/Blog-3.webp" className="d-block w-100" alt="..." />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Healthy food for pets</h5>
                   <p>

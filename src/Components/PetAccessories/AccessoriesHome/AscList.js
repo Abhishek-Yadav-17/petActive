@@ -11,10 +11,11 @@ const AscList = () => {
 
   const fetchdata = async () => {
     try {
-      const res = await fetch("https://fakestoreapi.com/products");
+      const res = await fetch("/accessories");
       const json = await res.json();
       setItem(json)
       setLoad(true);
+      console.log(json);
     } catch {
       console.error();
     }
@@ -40,7 +41,7 @@ const AscList = () => {
                 <div className="col" key={elem.id}>
                   <div className="card shadow-sm mx-2">
                     <img
-                      src={elem.image}
+                      src={elem.imgUrl}
                       alt="..."
                       style={{
                         height: "25rem",
@@ -51,10 +52,10 @@ const AscList = () => {
                     />
 
                     <div className="card-body">
-                      <h6 className="card-text">{elem.title}</h6>
-                      <h5>Count: {elem.rating.count}</h5>
-                      <h5>Rs.{elem.price}</h5>
-                      <h5>Rating: {elem.rating.rate} </h5>
+                      <h6 className="card-text">{elem.name}</h6>
+                      <p>Brand: {elem.md.name}</p>
+                      <p>Remaining.{elem.stock}</p>
+                      <p>Rs.: {elem.price} </p>
                       <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group">
                           <Link

@@ -61,8 +61,17 @@ const AcsNav = () => {
                   className="fa-solid fa-cart-plus"
                 ></i>
               </Link>
+              <Link to="/accessories" className="btn">
+                <i
+                  style={{ color: "white" }}
+s                 className="fa-solid fa-bag-shopping"
+                ></i>
+              </Link>
               <Link to="/userprofile" className="btn">
-                <i style={{ color: "white" }} className="fa-regular fa-user"></i>
+                <i
+                  style={{ color: "white" }}
+                  className="fa-regular fa-user"
+                ></i>
               </Link>
             </div>
             <button
