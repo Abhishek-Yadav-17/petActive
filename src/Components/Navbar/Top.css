@@ -1,14 +1,31 @@
-.logo{
-    height: 4rem;
-    object-fit: contain;
+.logo {
+  height: 4rem;
+  object-fit: contain;
 }
 
-.nav-body{
-    display: flex;
-    justify-content: space-evenly;
-    font-size: large;
+.nav-body {
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
 }
 
-.ddm{
-    background-color: #C38154;
+.ddm {
+  background-color: #c38154;
+}
+
+.navb {
+  position: fixed;
+  top: 0;
+  padding: 50px;
+  width: 100%;
+  height: 2rem;
+  z-index: 1;
+
+  /* Animations: */
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.nav__black {
+  background-color: white;
 }

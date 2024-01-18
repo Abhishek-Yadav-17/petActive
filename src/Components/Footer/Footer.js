@@ -1,7 +1,10 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+  const l = useSelector((s) => s);
   return (
     <div className="ftr">
       <div className="card text-bg-dark">
@@ -11,11 +14,23 @@ const Footer = () => {
           alt="..."
         />
         <div className="card-img-overlay">
-          <a className="logo-footer" href="/">
-            <img src="images/PetActive.png" alt="sd" />
-          </a>
+          <Link className="logo-footer" to="/">
+            <img src="./images/PetActive.png" alt="Home" />
+          </Link>
           <div className="row footer-links">
-            <div className="col-lg-3"></div>
+            <div className="col-lg-3">
+              {!l.adminLogin.value.bool ? (
+                <button className="btn btn-warning">
+                  {" "}
+                  <Link to="/adminlogin">Admin Login</Link>{" "}
+                </button>
+              ) : (
+                <button className="btn btn-warning">
+                  {" "}
+                  <Link to="/admin">Admin Home</Link>{" "}
+                </button>
+              )}
+            </div>
             <div className="col-lg-3 links">
               <a href="/">
                 <h5>Information</h5>
