@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import Loading from "../LoadingPage/Loading";
 
 const EditUser = () => {
   const [load, setLoad] = useState(false);
@@ -51,7 +52,7 @@ const EditUser = () => {
     <div className="p-5 m-5">
       {load ? (
         <form>
-          <div className="row mb-4">
+          {/* <div className="row mb-4">
             <div className="col">
               <div className="form-outline">
                 <input
@@ -82,7 +83,7 @@ const EditUser = () => {
                 </label>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="form-outline mb-4">
             <input
@@ -95,6 +96,20 @@ const EditUser = () => {
             />
             <label className="form-label" htmlFor="form3Example4">
               Name
+            </label>
+          </div>
+
+          <div className="form-outline mb-4">
+            <input
+              type="text"
+              id="form3Example4"
+              name="city"
+              className="form-control"
+              value={data.city}
+              onChange={handleInputChange}
+            />
+            <label className="form-label" htmlFor="form3Example4">
+              Address
             </label>
           </div>
 
@@ -165,7 +180,7 @@ const EditUser = () => {
           </button>
         </form>
       ) : (
-        <h1>Loading...</h1>
+        <Loading />
       )}
     </div>
   );

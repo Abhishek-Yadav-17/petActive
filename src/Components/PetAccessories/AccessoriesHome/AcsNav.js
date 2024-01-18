@@ -1,8 +1,22 @@
 import React from "react";
 import "./AscHome.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { currLog } from "../../../Redux/Slices/LoginSlic";
+import { currentUser } from "../../../Redux/Slices/UsersSlice";
 
 const AcsNav = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("state");
+    dispatch(currLog(false));
+    dispatch(currentUser({}));
+    alert("User logout.");
+    navigate("/login");
+  };
+
   return (
     <div>
       <header>
@@ -16,29 +30,28 @@ const AcsNav = () => {
               <div className="col-sm-8 col-md-7 py-4">
                 <h4 className="text-white">About</h4>
                 <p className="text" style={{ color: "white" }}>
-                  Add some information about the album below, the author, or any
-                  other background context. Make it a few sentences long so
-                  folks can pick up some informative tidbits. Then, link them
-                  off to some social networking sites or contact information.
+                  A pet shop or pet store is a essential services retailer which
+                  sells animals and pet care resources to the public. A variety
+                  of animal supplies and pet accessories are also sold in pet
+                  shops. The products sold include: food, treats, toys, collars,
+                  leashes, cat litter, cages and aquariums
                 </p>
               </div>
               <div className="col-sm-4 offset-md-1 py-4">
-                <h4 className="text-white">Contact</h4>
+                <h4 className="px-2 text-white">Contact</h4>
                 <ul className="list-unstyled">
                   <li>
-                    <Link to="/" className="text-white">
+                    <Link to="/" className="text-white btn">
                       Follow on Twitter
                     </Link>
                   </li>
                   <li>
-                    <Link to="/" className="text-white">
-                      Like on Facebook
+                    <Link to="/" className="text-white btn">
+                      Like on Instagram
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/" className="text-white">
-                      Email me
-                    </Link>
+                  <li onClick={handleLogout} className="text-white btn">
+                    <b>Logout</b>
                   </li>
                 </ul>
               </div>
@@ -55,16 +68,16 @@ const AcsNav = () => {
               <strong>PetActive</strong>
             </Link>
             <div className="options">
+              <Link to="/accessories" className="btn">
+                <i
+                  style={{ color: "white" }}
+                  className="fa-solid fa-bag-shopping"
+                ></i>
+              </Link>
               <Link to="/accessories/cart" className="btn">
                 <i
                   style={{ color: "white" }}
                   className="fa-solid fa-cart-plus"
-                ></i>
-              </Link>
-              <Link to="/accessories" className="btn">
-                <i
-                  style={{ color: "white" }}
-s                 className="fa-solid fa-bag-shopping"
                 ></i>
               </Link>
               <Link to="/userprofile" className="btn">

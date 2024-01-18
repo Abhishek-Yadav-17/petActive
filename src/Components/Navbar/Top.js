@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./Top.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { currLog } from "../../Redux/Slices/LoginSlic";
+import { currentUser } from "../../Redux/Slices/UsersSlice";
 
 const Top = () => {
   const [show, handleShow] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const select = useSelector((s) => s);
   const transitionNav = () => {
     if (window.scrollY > 100) {
       handleShow(true);
@@ -11,11 +17,20 @@ const Top = () => {
       handleShow(false);
     }
   };
+  console.log(select);
 
   useEffect(() => {
     window.addEventListener("scroll", transitionNav);
     return () => window.removeEventListener("scroll", transitionNav);
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("state");
+    dispatch(currLog(false));
+    dispatch(currentUser({}));
+    alert("User logout.");
+    navigate("/");
+  };
 
   return (
     <div className="top">
@@ -115,16 +130,49 @@ const Top = () => {
                 Pet Purchase/Adopt
               </Link>
             </span>
-            <span className="nav-item">
-              <Link
-                className="nav-link active"
-                aria-current="page"
-                to="/login"
-                style={{ color: "black" }}
-              >
-                Login/Signup
-              </Link>
-            </span>
+            {!select.login.value.bool ? (
+              <span className="nav-item">
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/login"
+                  style={{ color: "black" }}
+                >
+                  Login/Signup
+                </Link>
+              </span>
+            ) : (
+              <div className="dropdown nav-item">
+                <button
+                  className="btn dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i className="fa-regular fa-user"></i>
+                </button>
+                <ul className="dropdown-menu ddm">
+                  <li
+                    type="button"
+                    className="dropdown-item"
+                    onClick={() => {
+                      navigate("/userprofile");
+                    }}
+                  >
+                    User Profile
+                  </li>
+                  <li
+                    className="dropdown-item"
+                    type="button"
+                    onClick={() => {
+                      handleLogout();
+                    }}
+                  >
+                    Logout
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </nav>

@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { currentUser } from "../../Redux/Slices/UsersSlice";
+import Loading from "../LoadingPage/Loading";
 
 const Profile = () => {
   const dispatch = useDispatch();
   const [user, setUser] = useState({});
   const [load, setLoad] = useState(false);
+  const selector = useSelector(state => state);
+  const current = selector.user.value;
+  console.log(selector.user.value);
 
   const fetchData = async () => {
-    const id = "abhi1232@gmail.com";
+    const id = current.email;
     try {
       const res = await fetch(`users/${id}`);
       const json = await res.json();
-      console.log(json);
+      // console.log(json);
       setUser(json);
       setLoad(true);
     } catch {
@@ -101,7 +105,7 @@ const Profile = () => {
           </div>
         </div>
       ) : (
-        <h1>Loading...</h1>
+        <Loading/>
       )}
     </div>
   );

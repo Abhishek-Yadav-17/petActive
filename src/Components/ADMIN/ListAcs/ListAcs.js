@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./ListAcs.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { updtItem } from "../../../Redux/Slices/AcsSlice";
+import Loading from "../../LoadingPage/Loading";
 
 const ListAcs = () => {
   const [acs, setAcs] = useState([]);
   const [load, setLoad] = useState(false);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const fetchData = async () => {
     try {
@@ -27,25 +29,28 @@ const ListAcs = () => {
 
   const handleRemove = (e) => {
     fetch(`/accessories/${e}`, {
-      method: "DELETE",headers: {
-        'Content-Type': 'application/json',
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
       },
     });
-    alert("ID:"+e + " removed");
+    alert("ID:" + e + " removed");
     window.location.reload();
   };
 
-  const handleUpdate = (obj) => {
-    dispatch(updtItem(obj));
+  const handleUpdate = (elm) => {
+    console.log("axf");
+    console.log(elm);
+    dispatch(updtItem(elm));
+    navigate("/admin/editaccessory")
   };
-
 
   return (
     <div>
-      <Link to="/admin/addacs" className="btn btn-warning">
-        Add Accessory
-      </Link>
-      <section style={{ backgroundColor: "#eee" }}>
+      <section style={{ backgroundColor: "#eee" }} className="d-flex flex-column">
+        <Link to="/admin/addacs" className="btn btn-warning">
+          Add Accessory+
+        </Link>
         {load ? (
           acs.map((elm) => (
             <div className="container py-5" key={elm.id}>
@@ -108,9 +113,9 @@ const ListAcs = () => {
                         <div className="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
                           <div className="d-flex flex-row align-items-center mb-1">
                             <h4 className="mb-1 me-1">${elm.price}</h4>
-                            {/* <span className="text-danger">
+                            <span className="text-danger">
                               <s>${elm.price}</s>
-                            </span> */}
+                            </span>
                           </div>
                           <div className="d-flex flex-column mt-4">
                             <button
@@ -122,14 +127,15 @@ const ListAcs = () => {
                             >
                               Remove
                             </button>
-                            <Link
-                              to="/admin/editaccessory"
+                            <span
                               className="btn btn-outline-primary btn-sm mt-2"
                               type="button"
-                              onClick={()=>{handleUpdate(elm)}}
+                              onClick={() => {
+                                handleUpdate(elm);
+                              }}
                             >
                               Update
-                            </Link>
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -140,7 +146,7 @@ const ListAcs = () => {
             </div>
           ))
         ) : (
-          <h1>Loading...</h1>
+          <Loading />
         )}
       </section>
     </div>

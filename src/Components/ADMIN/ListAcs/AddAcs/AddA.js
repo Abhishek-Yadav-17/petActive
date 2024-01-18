@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
+import Loading from "../../../LoadingPage/Loading";
 
 const AddA = () => {
   const [manu, setManu] = useState([]);
@@ -39,9 +40,8 @@ const AddA = () => {
       },
     };
 
-
     console.log(d);
-    
+
     fetch(`/accessories`, {
       method: "POST",
       headers: {
@@ -118,7 +118,7 @@ const AddA = () => {
                 </li>
               ))
             ) : (
-              <h1>MLoading...</h1>
+              <Loading />
             )}
           </ul>
         </div>
@@ -300,7 +300,7 @@ const AddA = () => {
             </button>
           </form>
         ) : (
-          <h1>Loading...</h1>
+          <Loading />
         )}
       </div>
     </div>

@@ -3,7 +3,7 @@ import "./Intro.css";
 
 const Inro = () => {
   return (
-    <div className="Intro  pt-5">
+    <div className="Intro" style={{paddingTop:"4rem"}}>
       <div className="row">
         <div className="col-xl-5 t-left">
           <img src="https://pettie.wpengine.com/wp-content/uploads/2023/05/Pty-Slider-4-Image.webp" alt="" />

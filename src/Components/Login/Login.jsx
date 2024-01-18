@@ -1,11 +1,54 @@
-import React from "react";
+import React, { useRef, createContext, useEffect } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { currentUser } from "../../Redux/Slices/UsersSlice";
+import { currLog } from "../../Redux/Slices/LoginSlic";
+import { currAdLog } from "../../Redux/Slices/AdminLoginSlice";
 
 const Login = (props) => {
-  console.log(props);
+  const userRef = useRef(null);
+  const pwref = useRef(null);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const select = useSelector((s) => s);
+
+  const handleLogin = async () => {
+    if (props.name === "User") {
+      const id = userRef.current.value;
+      const res = await fetch(`/users/${id}`);
+      const json = await res.json();
+      if (json.pw === pwref.current.value) {
+        dispatch(currentUser(json));
+        dispatch(currLog({ bool: true }));
+        alert("User login successfull.");
+        navigate("/userprofile");
+      } else {
+        console.error("User Not Found");
+      }
+    } else if (props.name === "Admin") {
+      const id = userRef.current.value;
+      const res = await fetch(`/Admins/${id}`);
+      const json = await res.json();
+      if (json.pw === pwref.current.value) {
+        dispatch(currentUser(json));
+        dispatch(currAdLog({ bool: true, id: userRef.current.value }));
+        alert("Admin login successfull.");
+        navigate("/admin");
+      } else {
+        console.error("Admin Not Found");
+        alert("Admin Not Found");
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (select.login.value.bool) navigate("/userProfile");
+    else if(select.adminLogin.value.bool) navigate("/admin")
+  }, []);
+
   return (
-    <div className="ad-login" style={{backgroundColor: "yellow"}}>
+    <div className="ad-login" style={{ backgroundColor: "yellow" }}>
       <section>
         <div className="container py-5">
           <div className="row d-flex justify-content-center align-items-center">
@@ -15,14 +58,14 @@ const Login = (props) => {
                   <div className="col-lg-6">
                     <div className="card-body p-md-5 mx-md-4">
                       <div className="text-center">
-                        <Link to="/"><img
-                          src="images/PetActive.png"
-                          style={{ width: "185px" }}
-                          alt="logo"
-                        /></Link>
-                        <h4 className="mt-1 mb-5 pb-1">
-                          Welcome {props.name}
-                        </h4>
+                        <Link to="/">
+                          <img
+                            src="images/PetActive.png"
+                            style={{ width: "185px" }}
+                            alt="logo"
+                          />
+                        </Link>
+                        <h4 className="mt-1 mb-5 pb-1">Welcome {props.name}</h4>
                       </div>
 
                       <form>
@@ -34,8 +77,12 @@ const Login = (props) => {
                             id="form2Example11"
                             className="form-control"
                             placeholder="Phone number or email address"
+                            ref={userRef}
                           />
-                          <label className="form-label" for="form2Example11">
+                          <label
+                            className="form-label"
+                            htmlFor="form2Example11"
+                          >
                             Username
                           </label>
                         </div>
@@ -45,8 +92,12 @@ const Login = (props) => {
                             type="password"
                             id="form2Example22"
                             className="form-control"
+                            ref={pwref}
                           />
-                          <label className="form-label" for="form2Example22">
+                          <label
+                            className="form-label"
+                            htmlFor="form2Example22"
+                          >
                             Password
                           </label>
                         </div>
@@ -55,6 +106,7 @@ const Login = (props) => {
                           <button
                             className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3 p-3 w-100"
                             type="button"
+                            onClick={handleLogin}
                           >
                             Log in
                           </button>
@@ -65,8 +117,14 @@ const Login = (props) => {
                         </div>
 
                         <div className="d-flex align-items-center justify-content-center pb-4">
-                          <p className="mb-0 me-2">Don't have an user account?</p>
-                          <Link to="/signup" type="button" className="btn btn-outline-danger">
+                          <p className="mb-0 me-2">
+                            Don't have an user account?
+                          </p>
+                          <Link
+                            to="/signup"
+                            type="button"
+                            className="btn btn-outline-danger"
+                          >
                             Create new user
                           </Link>
                         </div>

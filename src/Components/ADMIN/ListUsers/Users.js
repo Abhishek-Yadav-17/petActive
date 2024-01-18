@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../../LoadingPage/Loading";
 
 const Users = () => {
   const [user, setUser] = useState([]);
@@ -23,14 +24,14 @@ const Users = () => {
 
   const defaultImg = "https://bootdey.com/img/Content/avatar/avatar7.png";
 
-
   const handleRemove = (e) => {
     fetch(`/users/${e}`, {
-      method: "DELETE",headers: {
-        'Content-Type': 'application/json',
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
       },
     });
-    alert("ID:"+e + " removed");
+    alert("ID:" + e + " removed");
     window.location.reload();
   };
 
@@ -57,7 +58,9 @@ const Users = () => {
                             <div className="thumb">
                               <img
                                 className="img-fluid"
-                                src={usr.imgUrl !== null ? usr.imgUrl : defaultImg}
+                                src={
+                                  usr.imgUrl !== null ? usr.imgUrl : defaultImg
+                                }
                                 alt=""
                               />
                             </div>
@@ -105,7 +108,9 @@ const Users = () => {
                                   data-toggle="tooltip"
                                   title="delete"
                                   data-original-title="Delete"
-                                  onClick={()=>{handleRemove(usr.email)}}
+                                  onClick={() => {
+                                    handleRemove(usr.email);
+                                  }}
                                 >
                                   <i className="far fa-trash-alt"></i>
                                 </button>
@@ -116,7 +121,7 @@ const Users = () => {
                       </tbody>
                     ))
                   ) : (
-                    <h1>Loading...</h1>
+                    <Loading />
                   )}
                 </table>
                 <div className="text-center mt-3 mt-sm-3">

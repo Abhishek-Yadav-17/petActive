@@ -27,6 +27,7 @@ import Store from "./Redux/Store/Store";
 import EditDoc from "./Components/ADMIN/ListDoc/EditDoc/EditDoc";
 import EditUser from "./Components/UserProfile/EditUser";
 import User from "./Components/UserProfile/User";
+import Success from "./Components/LoadingPage/Success";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login name="User" />,
+  },
+  {
+    path: "/adminlogin",
+    element: <Login name="Admin" />,
   },
   {
     path: "/accessories",
@@ -63,7 +68,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: false ? <Login name="Admin" /> : <AdHome />,
+    element: <AdHome />,
     children: [
       {
         path: "/admin/",
@@ -136,6 +141,10 @@ const router = createBrowserRouter([
   {
     path: "/petpurchase",
     element: "",
+  },
+  {
+    path: "/success",
+    element: <Success />,
   },
 ]);
 

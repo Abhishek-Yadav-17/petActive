@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import Loading from "../../../LoadingPage/Loading";
 
 const EditAcs = () => {
   const [load, setLoad] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
 
   const navigate = useNavigate();
 
   const select = useSelector((state) => state);
-  console.log(select.acs[0]);
+  console.log(select.acs);
 
   useEffect(() => {
-    setData(select.acs[0]);
+    setData(select.acs.value);
     setLoad(true);
     // eslint-disable-next-line
   }, []);
@@ -36,18 +37,16 @@ const EditAcs = () => {
         console.error("Error:", error);
       });
 
-      navigate("/admin/accessories");
+    navigate("/admin/accessories");
   };
 
-  const handleInputChange = (event) =>{
-
+  const handleInputChange = (event) => {
     const { name, value } = event.target;
     setData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
-
-  }
+  };
 
   return (
     <div className="p-5 edit-acs">
@@ -146,6 +145,7 @@ const EditAcs = () => {
             <input
               type="text"
               id="form6Example4"
+              name="imgUrl"
               className="form-control"
               value={data.imgUrl}
               onChange={handleInputChange}
@@ -194,7 +194,7 @@ const EditAcs = () => {
           </button>
         </form>
       ) : (
-        <h1>Loading...</h1>
+        <Loading />
       )}
     </div>
   );

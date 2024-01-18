@@ -1,148 +1,142 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.css";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeItem } from "../../../Redux/Slices/CartSlice";
+import Loading from "../../LoadingPage/Loading";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
-  const [item, setItem] = useState([]);
+  const [cart, setCart] = useState({});
   const [load, setLoad] = useState(false);
-  const select = useSelector((state) => state);
-  const dispatch = useDispatch();
-  console.log(select);
+  const [item, setItem] = useState([]);
+  const [l, setL] = useState(false);
+  const selector = useSelector((state) => state);
 
   const fetchItemData = async () => {
     try {
-      const res = await fetch(`/CartItems`);
+      const c_id = cart.id;
+      const res = await fetch(`/CartItems/${c_id}`);
       const json = await res.json();
       setItem(json);
-      setLoad(true);
       console.log(json);
+      setL(true);
     } catch {}
   };
 
   const fetchCartData = async () => {
-    const id = 2;
+    const id = selector.user.value.email;
     try {
       const res = await fetch(`/carts/${id}`);
       const json = await res.json();
-      setItem(json);
+      setCart(json);
       setLoad(true);
       console.log(json);
-    } catch {}
+    } catch {
+      console.log("Error", Error);
+    }
   };
 
   useEffect(() => {
     fetchCartData();
-    fetchItemData();
-    // eslint-disable-next-line
   }, []);
 
-  const handleRemove = (obj) => {
-    dispatch(removeItem(obj));
+  useEffect(() => {
+    if (load) fetchItemData();
+  }, [cart.id]);
+
+  const handleRemove = (id) => {
+    fetch(`/CartItems/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    alert("ID:" + id + " removed");
+    window.location.reload();
   };
+
   return (
-    <div className="cart p-2">
-      <section
-        className="p-5"
-        style={{
-          backgroundColor: "#FEFF86",
-          borderTop: "1px solid brown",
-          borderRadius: "5px",
-        }}
-      >
-        <h3 className="h2" style={{ textAlign: "center", paddingTop: "2rem" }}>
-          Shopping Cart{" "}
-        </h3>
-        <div className="container h-100">
-          <div className="row d-flex justify-content-center align-items-center">
+    <div
+      className="cart"
+      style={{
+        backgroundColor: "#E2C799",
+        borderTop: "1px solid brown",
+        borderRadius: "5px",
+      }}
+    >
+      {load ? (
+        <section className="p-5">
+          <h3
+            className="h2"
+            style={{ textAlign: "center", paddingTop: "2rem" }}
+          >
+            Shopping Cart{" "}
+          </h3>
+          <h4 style={{ textAlign: "center", paddingTop: "2rem" }}>
+            Welcome {cart.cust_id.name}
+          </h4>
+          <div className="container h-100">
             <div className="col">
               <p>
-                <span className="h4">(1 item in your cart)</span>
-                {item.date}
+                <span className="h4">({item.length} item in your cart)</span>
               </p>
-              {load ? (
-                select.cart.map((elem) => (
-                  <div key={elem.id} className="container">
+              {l ? (
+                item.map((elem) => (
+                  <div key={elem.cartItem_id}>
                     <div className="card mb-4">
-                      <div className="card-body p-4">
+                      <div className="card-body">
+                        <button
+                          className="btn"
+                          onClick={() => {
+                            handleRemove(elem.cartItem_id);
+                          }}
+                        >
+                          <i
+                            style={{ color: "red" }}
+                            className="fa-solid fa-trash"
+                          ></i>
+                        </button>
                         <div className="row align-items-center">
-                          <div className="col-md-2">
+                          <div
+                            className="col-md-2"
+                            style={{ height: "7rem", width: "6rem" }}
+                          >
                             <img
-                              src={elem.imgUrl}
+                              src={elem.acs.imgUrl}
                               className="img-fluid"
                               alt="Generic placeholder"
                             />
                           </div>
-                          <div className="col-md-2 d-flex justify-content-center">
-                            <div>
-                              <p className="small text-muted mb-4 pb-2">Name</p>
-                              <p className="fw-normal mb-0">{elem.name}</p>
-                            </div>
-                            <div>
-                              <p className="small text-muted mb-4 pb-2">
-                                Product ID
-                              </p>
-                              <p className="lead fw-normal mb-0">
-                                {elem.price}
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-md-2 d-flex justify-content-center">
-                            <div>
-                              <p className="small text-muted mb-4 pb-2">
-                                Color
-                              </p>
-                              <p className="lead fw-normal mb-0">
-                                <i
-                                  className="fas fa-circle me-2"
-                                  style={{ color: "brown" }}
-                                ></i>
-                                Brown
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-md-2 d-flex justify-content-center">
-                            <div>
-                              <p className="small text-muted mb-4 pb-2">
-                                Quantity
-                              </p>
-                              <p className="lead fw-normal mb-0">
-                                {elem.quantity}
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-md-2 d-flex justify-content-center">
-                            <div>
-                              <p className="small text-muted mb-4 pb-2">
-                                Price
-                              </p>
-                              <p className="lead fw-normal mb-0">$799</p>
-                            </div>
-                          </div>
-                          <div className="col-md-2 d-flex justify-content-center">
-                            <div>
-                              <p className="small text-muted mb-4 pb-2">
-                                Total
-                              </p>
-                              <p className="lead fw-normal mb-0">$799</p>
-                            </div>
+                          <div className="col-md-10">
+                            <table className="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Name</th>
+                                  <th scope="col">Product ID</th>
+                                  <th scope="col">Color</th>
+                                  <th scope="col">Quantity</th>
+                                  <th scope="col">Price/item</th>
+                                  <th scope="col">Total</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>{elem.acs.name}</td>
+                                  <td>{elem.acs.id}</td>
+                                  <td>{elem.acs.color}</td>
+                                  <td>{elem.quantity}</td>
+                                  <td>${elem.acs.price}</td>
+                                  <td>${elem.acs.price * elem.quantity}</td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
                         </div>
-                        <button
-                          className="btn btn-info"
-                          onClick={() => {
-                            handleRemove(elem);
-                          }}
-                        >
-                          Remove
-                        </button>
                       </div>
                     </div>
                   </div>
                 ))
               ) : (
-                <h1>Loading...</h1>
+                <Loading />
               )}
 
               <div className="card mb-5">
@@ -152,7 +146,7 @@ const Cart = () => {
                       <span className="small text-muted me-2">
                         Order total:
                       </span>{" "}
-                      <span className="lead fw-normal">$799</span>
+                      <span className="lead fw-normal">${cart.amount}</span>
                     </p>
                   </div>
                 </div>
@@ -172,8 +166,10 @@ const Cart = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 };

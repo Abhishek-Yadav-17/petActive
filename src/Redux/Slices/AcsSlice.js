@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const AcsSlice = createSlice({
   name: "acs",
-  initialState: [],
+  initialState: {},
   reducers: {
     updtItem: (state, action) => {
       console.log("Acs Item", action.payload);
-      state.push(action.payload);
+      state.value = action.payload;
     },
   },
 });
